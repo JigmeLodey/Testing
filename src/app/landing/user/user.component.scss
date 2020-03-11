@@ -1,0 +1,155 @@
+.main {
+  height: 100%;
+  width: 100px;
+  padding: 0;
+
+
+  mat-toolbar {
+    padding: 0;
+    background: #006f7f;
+
+
+    .logo {
+      background: #b8e4ed;
+      height: 62px;
+      width: 62px;
+      border-radius: 50%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        -webkit-box-shadow: 10px 10px 53px 0px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
+      }
+
+      img:hover {
+        animation: shake 0.72s cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+      }
+
+      @keyframes shake {
+        10%, 90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+        20%, 80% {
+          transform: translate3d(2px, 0, 0);
+        }
+        30%, 50%, 70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+        40%, 60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+    }
+
+    .name {
+      color: #b8e4ed;
+      font-size: 20px;
+      font-weight: 200;
+      cursor: pointer;
+    }
+
+    .name:hover {
+      opacity: 0.6;
+    }
+
+    .profile-pic {
+      height: 62px;
+      width: 62px;
+      background: #b8e4ed;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .menu {
+      height: 62px;
+      width: 62px;
+      margin: 0 auto;
+    }
+
+    .menu-dots {
+      cursor: pointer;
+      transition: transform .9s;
+      margin: 0 auto;
+    }
+
+    .menu-dots:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5);
+    }
+  }
+
+  .nav-bar {
+    background: #ffffff;
+    position: fixed;
+    margin-top: 50px;
+    height: 100%;
+    width: 14%;
+
+    .title {
+      font-size: 25px;
+      color: #006f7f;
+    }
+
+    .navigation {
+      padding: 40px;
+
+      .icon {
+        font-weight: 200;
+        color: black;
+
+        .icons-nav {
+          cursor: pointer;
+          padding: 7px;
+          background-image: linear-gradient(to left, transparent, transparent 50%, #138592 50%, #f5f4ff);
+          background-position: 100% 0;
+          background-size: 200% 100%;
+          transition: all .25s ease-in;
+          border-radius: 20px;
+        }
+
+        .icons-nav:hover {
+          background-position: 0 0;
+          color: #333;
+        }
+      }
+    }
+
+  }
+
+  .features {
+    padding: 25px;
+
+    .title {
+      color: #006f7f;
+      font-size: 25px;
+    }
+
+    .icons {
+      font-weight: 200;
+      color: black;
+
+      .icons-nav {
+        cursor: pointer;
+        padding: 7px;
+        background-image: linear-gradient(to left, transparent, transparent 50%, #138592 50%, #f5f4ff);
+        background-position: 100% 0;
+        background-size: 200% 100%;
+        transition: all .25s ease-in;
+        border-radius: 20px;
+      }
+
+      .icons-nav:hover {
+        background-position: 0 0;
+        color: #333;
+      }
+    }
+  }
+  .contain{
+    margin-top: 30px;
+  }
+}

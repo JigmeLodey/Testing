@@ -1,0 +1,134 @@
+.main {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  .nav-bar {
+    background: #ffffff;
+    position: fixed;
+    height: 100%;
+    width: 14%;
+
+    .title {
+      font-size: 25px;
+      color: #006f7f;
+    }
+
+    .navigation {
+      padding: 40px;
+
+    }
+  }
+
+  .post {
+    width: 100%;
+    height: 260px;
+
+    .header {
+      height: 20%;
+      width: 100%;
+      padding: 0;
+
+      .pic {
+        height: 32px;
+        width: 34px;
+        border-radius: 50%;
+
+        img {
+          height: 32px;
+          width: 34px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .feed-body {
+      width: 100%;
+      padding: 0;
+
+      textarea {
+        width: 100%;
+        border: none;
+        resize: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 200;
+      }
+    }
+    .footer{
+     .reset{
+       .comments{
+         color: #138592;
+       }
+     }
+    }
+  }
+
+  .feeds {
+    .header {
+      height: 60px;
+      width: 100%;
+      padding: 0;
+
+      .pic {
+        height: 35px;
+        width: 34px;
+        border-radius: 50%;
+
+        img {
+          height: 37px;
+          width: 34px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .footer {
+      mat-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .add {
+    .header {
+      height: 60px;
+      width: 100%;
+      padding: 2px;
+
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    .add-body {
+      height: 550px;
+      width: 100%;
+
+      img {
+        height: 250px;
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .footer {
+      .link {
+        cursor: pointer;
+        font-weight: 200;
+        transition: all .25s ease-in;
+      }
+      .link:hover{
+        color: #138592;
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

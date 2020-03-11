@@ -1,0 +1,44 @@
+.main{
+  height: 100%;
+  width: 100%;
+  margin-top: 35px;
+  overflow-x: hidden;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  .book-form{
+    padding: 30px;
+    width: 700px;
+    position: relative;
+    .form-title{
+      width: 300px;
+      height: 70px;
+      color: #c1c1c1;
+      font-size: 40px;
+      font-weight: 300;
+      text-align: center;
+    }
+    .form-body{
+      height: auto;
+      width: 500px;
+      padding: 20px;
+      .input-value{
+        width: 100%;
+      }
+      .button{
+        width: 500px;
+        .send{
+          background-color: #138592;
+          color: #b8e4ed;
+        }
+        .cancel{
+          background-color: #b70900;
+          color: #b8e4ed;
+        }
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

@@ -1,0 +1,205 @@
+<div class="main">
+  <div fxLayout="column">
+    <div class="banner">
+      <div fxFlex="100" fxLayout="column">
+        <div fxLayoutAlign="center center">
+
+        </div>
+      </div>
+    </div>
+    <div fxFlex="100" fxLayout="row">
+      <div fxFlex="18" fxLayout="column">
+        <div class="profile">
+          <div class="card">
+            <div class="pic-place">
+
+            </div>
+            <div class="cam">
+              <mat-icon style="font-size: 18px">photo_camera</mat-icon>
+            </div>
+            <div class="detail mt-5">
+              <div class="mt-3">
+                Hi my name is <span>{{this.userValue?.name}}</span>
+                and i'm <span>{{this.userValue?.gender}}</span>.
+                My email id is <span>{{this.userValue?.email}}</span> and phone number is
+                <span>{{this.userValue?.phone}}</span>.
+                I stay at <span>{{this.userValue?.address}}</span>.
+                Role {{this.userValue?.roles}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxFlex="80" fxLayout="column" class="ml-4 mt-3">
+        <div fxFlex="100" fxLayout="row">
+          <div fxFlex="20" fxLayoutAlign="column">
+            <div class="title" fxLayoutAlign="start top">
+              Basic Information
+            </div>
+          </div>
+          <div fxFlex="45" fxLayout="column">
+            <div fxLayoutAlign="end center" class="mr-5 mt-3">
+              <button class="edit-btn" (click)="onEdit(1)" *ngIf="!edit1">Edit</button>
+              <button class="save-btn" (click)="onSave(1)" *ngIf="edit1">Save</button>
+            </div>
+          </div>
+        </div>
+        <ng-container [formGroup]="basicInfo">
+          <div class="info mt-4 ml-5">
+            <div fxFlex="100" fxLayout="row">
+              <div class="box">
+                Name:
+                <div class="mt-3" *ngIf="!edit1">
+                  {{this.userValue?.name | titlecase}}
+                </div>
+                <div class="mt-3" *ngIf="edit1">
+                  <mat-form-field>
+                    <input matInput formControlName="name">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="ml-5 box">
+                Email
+                <div class="mt-3" *ngIf="!edit1">
+                  {{this.userValue?.email}}
+                </div>
+                <div class="mt-3" *ngIf="edit1">
+                  <mat-form-field>
+                    <input matInput formControlName="email">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="box ml-5">
+                Gender
+                <div class="mt-3" *ngIf="!edit1">
+                  {{this.userValue?.gender | titlecase}}
+                </div>
+                <div class="mt-3" *ngIf="edit1">
+                  <mat-form-field>
+                    <input matInput formControlName="gender">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info ml-5 mt-5">
+            <div fxFlex="100" fxLayout="row">
+              <div class=" box">
+                Phone
+                <div class="mt-3" *ngIf="!edit1">
+                  {{this.userValue?.phone}}
+                </div>
+                <div class="mt-3" *ngIf="edit1">
+                  <mat-form-field>
+                    <input matInput formControlName="phone">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <mat-divider class="mt-4"></mat-divider>
+        <div fxFlex="100" fxLayout="row" class="mt-3">
+          <div fxFlex="20" fxLayoutAlign="column">
+            <div class="title" fxLayoutAlign="start top">
+              Additional Information
+            </div>
+          </div>
+          <div fxFlex="45" fxLayout="column">
+            <div fxLayoutAlign="end end" class="mr-5 mt-3">
+              <button class="edit-btn" (click)="onEdit(2)" *ngIf="!edit2">Edit</button>
+              <button class="save-btn" (click)="onSave(2)" *ngIf="edit2">Save</button>
+            </div>
+          </div>
+        </div>
+        <div class="info ml-5 mt-3">
+          <ng-container [formGroup]="addform">
+            <div fxFlex="100" fxLayout="column">
+              <div fxFlex="100" fxLayout="row">
+                <div class="box">
+                  User Name:
+                  <div class="mt-3" *ngIf="!edit2">
+                    {{this.addValue?.user_name}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput formControlName="user_name">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="ml-5 box">
+                  Date of Birth
+                  <div class="mt-3" *ngIf="!edit2">
+                    {{this.addValue?.dob}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput formControlName="dob">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="ml-5 box">
+                  Book Genre
+                  <div class="mt-3" *ngIf="!edit2">
+                    {{this.addValue?.bookgenre}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput formControlName="bookgenre">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div fxFlex="100" fxLayout="row" class="mt-5">
+                <div class="box">
+                  Total Book Read:
+                  <div class="mt-3 ml-1" *ngIf="!edit2">
+                    {{this.addValue?.totalread}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput type="number" formControlName="totalread">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="ml-5 box">
+                  Current BooK
+                  <div class="mt-3" *ngIf="!edit2">
+                    {{this.addValue?.currentBook}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput formControlName="currentbook">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="ml-5 box">
+                  City
+                  <div class="mt-3" *ngIf="!edit2">
+                    {{this.addValue?.city}}
+                  </div>
+                  <div class="mt-3" *ngIf="edit2">
+                    <mat-form-field>
+                      <input matInput formControlName="city">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 box mb-5">
+                Dzongkhag
+                <div class="mt-3" *ngIf="!edit2">
+                  {{this.addValue?.dzongkha}}
+                </div>
+                <div class="mt-3" *ngIf="edit2">
+                  <mat-form-field>
+                    <input matInput formControlName="dzongkhag">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

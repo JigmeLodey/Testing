@@ -1,0 +1,83 @@
+.main{
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  overflow-x: hidden;
+  .banner{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/image/book.jpeg');
+    height: 450px;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .profile{
+    height: 500px;
+    width: 100%;
+    .card{
+      height: 300px;
+      .pic-place{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        margin-left: 80px;
+        margin-top: -50px;
+        background: #138592;
+        border-radius: 50%;
+      }
+      .cam{
+        margin-top: 40px;
+        margin-left: 120px;
+        position: absolute;
+        cursor: pointer;
+
+      }
+      .detail{
+        font-weight: 100;
+        color: grey;
+        padding: 10px;
+        line-height: 26px;
+        span{
+          font-weight: 200;
+          color: black;
+        }
+      }
+    }
+  }
+  .title{
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+  .edit-btn{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    color: #b8e4ed;
+    font-size: 12px;
+    background-color: #f63173;
+  }
+  .save-btn{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    color: #b8e4ed;
+    font-size: 12px;
+    background-color: #138592;
+  }
+  .info{
+    justify-content: space-around;
+    .box{
+      width:250px;
+      font-weight: 200;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

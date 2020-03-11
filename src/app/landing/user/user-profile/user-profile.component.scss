@@ -1,0 +1,31 @@
+.main {
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  overflow-x: hidden;
+  .profile{
+    width: 500px;
+    height: 700px;
+    padding: 10px;
+    .profile-picture{
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      background-color: #138592;
+    }
+    .info{
+      mat-divider{
+        width: 300px;
+        margin-left: 120px;
+       color: #b8e4ed;
+        border: solid 2px;
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

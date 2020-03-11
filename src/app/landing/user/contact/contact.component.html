@@ -1,0 +1,157 @@
+<div class="main">
+  <div class="mt-2" fxFlex="100" fxLayout="column">
+    <div fxFlex="100" fxLayout="row">
+      <mat-card class="contact-detail">
+        <div fxFlex="100" fxLayout="column">
+          <div fxFlex="11" fxLayout="row">
+            <div class="logo">
+            </div>
+            <div fxLayoutAlign="start center" class="ml-2">
+              <span>The Bridge</span>
+            </div>
+          </div>
+          <div fxLayoutAlign="start center">
+            <div fxFlex="100" fxLayout="column">
+              <div class="mt-5">
+                <span class="description"> The Bridge is book rolling web-app which is design by sherubtse student of computer science mainly for sharing of books and donation of books.</span>
+              </div>
+              <div class="mt-5" fxLayoutAlign="start center">
+                <mat-icon>location_on</mat-icon>
+                <div class="ml-2">Sherubtse College</div>
+              </div>
+              <div class="mt-4" fxLayoutAlign="start center">
+                <mat-icon>phone</mat-icon>
+                <div class="ml-3">77455740</div>
+              </div>
+              <div class="mt-4" fxLayoutAlign="start center">
+                <mat-icon>mail</mat-icon>
+                <div class="ml-3">thebridge@gmail.com</div>
+              </div>
+              <div class="mt-4" fxLayoutAlign="start center">
+                <mat-icon>alarm</mat-icon>
+                <div class="ml-3">Monday - Sunday</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <mat-card>
+              <div fxLayoutAlign="center start" class="mat-title">Location</div>
+              <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+
+
+            </mat-card>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="contact-form ml-3">
+        <div fxFlex="100" fxLayout="column">
+          <div fxLayoutAlign="center center" class="mt-5">
+            <mat-card-title>Contact Form</mat-card-title>
+          </div>
+          <ng-container [formGroup]="contactForm" (ngSubmit)="onSend()">
+            <div fxFlex="20" fxLayout="row">
+              <div class="ml-2 mt-5">
+                <mat-form-field appearance="outline" class="contact-input">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error *ngIf="contactForm.get('email').hasError('required')">Email Required</mat-error>
+                  <mat-error *ngIf="contactForm.get('email').hasError('pattern')">Email Invalid</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="ml-5 mt-5">
+                <mat-form-field appearance="outline" class="contact-input">
+                  <mat-label>Name</mat-label>
+                  <input matInput formControlName="name">
+                  <mat-error *ngIf="contactForm.get('name').hasError('required')">Name Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxFlex="20" fxLayout="row">
+              <div class="ml-2 mt-5">
+                <mat-form-field appearance="outline" class="contact-input">
+                  <mat-label>Phone</mat-label>
+                  <input type="number" matInput formControlName="phone">
+                  <mat-error *ngIf="contactForm.get('phone').hasError('required')">Number Required</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="ml-5 mt-5">
+                <mat-form-field appearance="outline" class="contact-input">
+                  <mat-label>Current Location</mat-label>
+                  <input matInput formControlName="location">
+                  <mat-error *ngIf="contactForm.get('location').hasError('required')">Location Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxFlex="20" fxLayout="row">
+              <div class="ml-2 mt-5">
+                <mat-form-field appearance="outline" class="message">
+                  <mat-label>Message</mat-label>
+                  <textarea matInput style="height: 150px" formControlName="message"></textarea>
+                  <mat-error *ngIf="contactForm.get('message').hasError('required')">Message Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="mt-5" fxLayoutAlign="end end">
+                <button class="btn btn-primary" (click)="onSend()">Send</button>
+              </div>
+              <notifier-container></notifier-container>
+            </div>
+          </ng-container>
+        </div>
+      </mat-card>
+      <div fxLayout="column" class="newbook">
+        <mat-card-title style="font-weight: 300" fxLayoutAlign="center start">New Books</mat-card-title>
+        <mat-card class="ml-3" style="height: 370px; width: 320px">
+          <div fxFlex="100" fxFlexAlign="column">
+            <div class="header">
+              Title: Lover
+              <br>
+              Author: Jigme
+              <mat-divider></mat-divider>
+            </div>
+            <div class="body">
+              <div class="image mt-2">
+                <img src="../../../../assets/image/book.jpeg" class="embed-responsive">
+                <span class="mt-2">
+                sportsman are admitting gentleman belonging his. Is oppose no he summer lovers twenty in.
+                  Not his difficulty boisterous surrounded bed. Seems folly if in given scale.
+              </span>
+              </div>
+              <mat-divider></mat-divider>
+            </div>
+            <div class="footer">
+              More
+            </div>
+          </div>
+        </mat-card>
+        <mat-card class="ml-3 mt-2" style="height: 370px; width: 320px">
+          <div fxFlex="100" fxFlexAlign="column">
+            <div class="header">
+              Title: Lover
+              <br>
+              Author: Jigme
+              <mat-divider></mat-divider>
+            </div>
+            <div class="body">
+              <div class="image mt-2">
+                <img src="../../../../assets/image/book.jpeg" class="embed-responsive">
+                <span class="mt-2">
+                sportsman are admitting gentleman belonging his. Is oppose no he summer lovers twenty in.
+                  Not his difficulty boisterous surrounded bed. Seems folly if in given scale.
+              </span>
+              </div>
+              <mat-divider></mat-divider>
+            </div>
+            <div class="footer">
+             More
+            </div>
+          </div>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>

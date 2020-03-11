@@ -1,0 +1,40 @@
+.main{
+ height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  .event{
+    height: 500px;
+    background-color: #f5f4ff;
+    animation-duration: 3s;
+    animation-name: slidein;
+
+  }
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 10%;
+    }
+
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+  }
+  .mat-title{
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  .feedback{
+    animation-duration: 3s;
+    animation-name: slidein;
+    .input{
+      width: 100%;
+    }
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
