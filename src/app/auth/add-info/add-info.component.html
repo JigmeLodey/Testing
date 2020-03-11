@@ -1,0 +1,73 @@
+
+<div class="auth" fxLayout="column">
+  <div fxLayoutAlign="center center">
+    <notifier-container style="position: absolute"></notifier-container>
+  </div>
+  <div fxFlex="100" fxLayoutAlign="center center">
+    <mat-card class="form">
+      <div class="auth-form">
+        <div class="logo">
+          <div fxFlex="100" fxLayoutAlign="center center">
+            <img src="../../assets/image/logo.jpg" class="img-thumbnail">
+          </div>
+        </div>
+        <div class="form-contain  mt-4"  fxLayout="column">
+
+          <!-- //////////////////////////////////////////////////////////////////////////////////////////
+                                          Create ACC
+           /////////////////////////////////////////////////////////////////////////////////////////  -->
+          <form [formGroup]="addinfoForm">
+            <div *ngIf=" firstPage && !secondPage">
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Username</mat-label>
+                <input matInput  formControlName="user_name">
+                <mat-error *ngIf="addinfoForm.get('user_name').hasError('required')">Username required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput type="date" formControlName="dob">
+                <mat-error *ngIf="addinfoForm.get('dob').hasError('required')">Date of Birth required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Book Genre</mat-label>
+                <input matInput formControlName="bookgenre">
+                <mat-error *ngIf="addinfoForm.get('bookgenre').hasError('required')">Book Genre required</mat-error>
+              </mat-form-field>
+            </div>
+            <ng-container *ngIf="!firstPage && secondPage">
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Total Book Read</mat-label>
+                <input matInput formControlName="totalread">
+                <mat-error *ngIf="addinfoForm.get('totalread').hasError('required')">Number of Book required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Current Book</mat-label>
+                <input matInput formControlName="currentBook">
+                <mat-error *ngIf="addinfoForm.get('currentBook').hasError('required')">Current Reading Book required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Current Address City</mat-label>
+                <input matInput formControlName="city">
+                <mat-error *ngIf="addinfoForm.get('currentBook').hasError('required')">Current Reading Book required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Current Address Dzongkhag</mat-label>
+                <input matInput formControlName="dzongkha">
+                <mat-error *ngIf="addinfoForm.get('currentBook').hasError('required')">Current Reading Book required</mat-error>
+              </mat-form-field>
+            </ng-container>
+            <button class="btn" mat-button *ngIf="firstPage && !secondPage" (click)="pageChange()">Next</button>
+            <button class="btn" mat-button *ngIf="!firstPage && secondPage" (click)="signUp()">Update</button>
+          </form>
+          <div class="mt-2" fxLayout="column">
+            <div fxLayoutAlign="center center">
+              <span class="create-link" (click)="back()" *ngIf="!firstPage && secondPage">
+                 Back
+             </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+
+.auth {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background: rgb(243, 243, 245);
+  background: linear-gradient(6deg, rgba(243, 243, 245, 1) 50%, rgba(167, 208, 217, 1) 100%, rgba(2, 0, 36, 1) 100%);
+
+  .form {
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 53px 0px rgba(0, 0, 0, 0.75);
+    background: rgb(243, 243, 245);
+    background: linear-gradient(6deg, rgba(243, 243, 245, 1) 50%, rgba(167, 208, 217, 1) 100%, rgba(2, 0, 36, 1) 100%);
+
+    .auth-form {
+      height: 100%;
+      width: 100%;
+
+      .logo {
+        height: 20%;
+
+        img {
+          height: 70px;
+          width: 70px;
+          border-radius: 50%;
+        }
+      }
+
+      .sub-title {
+        color: rgba(111, 111, 111, 0.81);
+        font-size: 20px;
+        font-weight: 200;
+      }
+
+      .form-contain {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        display: flex;
+
+        .input-box {
+          width: 100%;
+
+        }
+
+        .forgot {
+          width: 100%;
+          color: rgba(125, 0, 0, 0.8);
+          font-size: 12px;
+          font-weight: 200;
+          cursor: pointer;
+          display: inline-block;
+          transition-duration: 0.3s;
+          transition-property: transform;
+          -webkit-tap-highlight-color: transparent;
+          transform: translateZ(0);
+        }
+        .forgot:hover{
+          transform: scale(1.1);
+          color: rgba(96, 0, 47, 0.8);
+        }
+        .btn {
+          background-color: rgba(16, 104, 90, 0.91);
+          width: 100%;
+          color: rgba(207, 207, 207, 0.81);
+          font-size: 20px;
+          font-weight: 200;
+          border-radius: 10px;
+          display: inline-block;
+          transition-duration: 0.3s;
+          transition-property: transform;
+          -webkit-tap-highlight-color: transparent;
+          transform: translateZ(0);
+
+        }
+
+        .btn:hover {
+          transform: scale(1.1);
+        }
+
+        .create {
+          color: rgba(84, 84, 84, 0.81);
+          font-size: 12px;
+          font-weight: 200;
+        }
+
+        .create-link {
+          color: teal;
+          font-size: 13px;
+          font-weight: 200;
+          cursor: pointer;
+          display: inline-block;
+          transition-duration: 0.3s;
+          transition-property: transform;
+          -webkit-tap-highlight-color: transparent;
+          transform: translateZ(0);
+          box-shadow: 0 0 1px transparent;
+        }
+        .create-link:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+

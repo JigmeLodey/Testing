@@ -1,0 +1,127 @@
+<div class="auth" fxLayout="column">
+    <div fxLayoutAlign="center center">
+      <notifier-container style="position: absolute"></notifier-container>
+    </div>
+  <div fxFlex="100" fxLayoutAlign="center center">
+    <mat-card class="form">
+      <div class="auth-form">
+        <div class="logo">
+          <div fxFlex="100" fxLayoutAlign="center center">
+           <img src="../../assets/image/logo.jpg" class="img-thumbnail">
+          </div>
+        </div>
+        <div class="sub-title" fxLayout="column">
+          <div fxLayoutAlign="center center" *ngIf="!create && !forgot">Sign in</div>
+          <div fxLayoutAlign="center center" *ngIf="create">Sign up</div>
+          <div fxLayoutAlign="center center" *ngIf="forgot">Reset password</div>
+        </div>
+        <div class="form-contain  mt-4"  fxLayout="column">
+ <!-- /////////////////////////////////////////////////////////////////////////////////////////////
+                           Log In
+  /////////////////////////////////////////////////////////////////////////////////////////////      -->
+          <div style="width: 100%">
+            <form [formGroup]="loginForm" *ngIf="!create && !forgot">
+              <mat-form-field appearance="outline" class="input-box mt-2">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email">
+                <mat-error *ngIf="loginForm.get('email').hasError('required')">Email required</mat-error>
+                <mat-error *ngIf="loginForm.get('email').hasError('pattern')">Email invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-2">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error *ngIf="loginForm.get('password').hasError('required')">Password required</mat-error>
+              </mat-form-field>
+              <div class="forgot" fxLayout="column">
+                <div fxFlex="100" fxLayoutAlign="end end"  (click)="Forgot()">FORGOT PASSWORD</div>
+              </div>
+              <button class="btn mt-3" (click)="singIn()"  mat-button>Sign in</button>
+            </form>
+          </div>
+     <!-- //////////////////////////////////////////////////////////////////////////////////////
+                                ForgotPassword
+      //////////////////////////////////////////////////////////////////////////////////////  -->
+
+          <form [formGroup]="forgotForm" *ngIf="forgot">
+            <mat-form-field appearance="outline" class="input-box mt-2">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email">
+              <mat-error *ngIf="forgotForm.get('email').hasError('required')">Email required</mat-error>
+              <mat-error *ngIf="forgotForm.get('email').hasError('pattern')">Email invalid</mat-error>
+            </mat-form-field>
+            <button class="btn mt-3" mat-button (click)="sendMail()">Send</button>
+            <div class="mt-4" fxLayout="column" *ngIf="!create">
+              <div fxLayoutAlign="center center">
+             <span class="create-link" (click)="back('login')">
+                 Sign in
+             </span>
+              </div>
+            </div>
+          </form>
+
+ <!-- //////////////////////////////////////////////////////////////////////////////////////////
+                                 Create ACC
+  /////////////////////////////////////////////////////////////////////////////////////////  -->
+          <form [formGroup]="createForm">
+             <div *ngIf=" create && !page">
+               <mat-form-field appearance="outline" class="input-box mt-1">
+                 <mat-label>Email</mat-label>
+                 <input matInput type="email" formControlName="email">
+                 <mat-error *ngIf="createForm.get('email').hasError('required')">Email required</mat-error>
+                 <mat-error *ngIf="createForm.get('email').hasError('pattern')">Email invalid</mat-error>
+               </mat-form-field>
+               <mat-form-field appearance="outline" class="input-box mt-1">
+                 <mat-label>Name</mat-label>
+                 <input matInput formControlName="name">
+                 <mat-error *ngIf="createForm.get('name').hasError('required')">Name required</mat-error>
+               </mat-form-field>
+               <mat-form-field appearance="outline" class="input-box mt-1">
+                 <mat-label>Password</mat-label>
+                 <input matInput type="password" formControlName="password">
+                 <mat-error *ngIf="createForm.get('password').hasError('required')">Password required</mat-error>
+               </mat-form-field>
+             </div>
+            <ng-container *ngIf="create && page">
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Gander</mat-label>
+               <mat-select formControlName="gender">
+                 <mat-option value="male">Male</mat-option>
+                 <mat-option value="female">Female</mat-option>
+               </mat-select>
+                <mat-error *ngIf="createForm.get('gender').hasError('required')">Gender required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-box mt-1">
+                <mat-label>Phone</mat-label>
+                <input matInput type="number" formControlName="phone">
+                <mat-error *ngIf="createForm.get('phone').hasError('required')">Number required</mat-error>
+                <mat-error *ngIf="createForm.get('phone').hasError('minLength')">Length 8</mat-error>
+              </mat-form-field>
+            </ng-container>
+            <button class="btn" mat-button *ngIf="create && !page" (click)="pageChange()">Next</button>
+            <button class="btn" mat-button *ngIf="create && page" (click)="signUp()">Sign up</button>
+          </form>
+          <div class="mt-4" fxLayout="column" *ngIf="!create">
+            <div fxLayoutAlign="center center">
+             <span class="create">
+                  Don't have account?
+             </span>
+            </div>
+          </div>
+          <div class="mt-2" fxLayout="column">
+            <div fxLayoutAlign="center center">
+             <span class="create-link" (click)="signUpPage()" *ngIf="!create">
+                  CREATE NOW!
+             </span>
+              <span class="create-link" (click)="back('login')" *ngIf="create && !page">
+                 Already have account
+             </span>
+              <span class="create-link" (click)="back('back')" *ngIf="create && page">
+                 Back
+             </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
