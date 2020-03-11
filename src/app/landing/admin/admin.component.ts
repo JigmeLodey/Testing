@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -9,12 +10,19 @@ export class AdminComponent implements OnInit {
   showToolBar: false;
   enableSide = false;
 
-  constructor() { }
+  constructor(private route: Router) {
+  }
 
   ngOnInit() {
   }
 
   menus(enable: string) {
-      this.enableSide = enable === 'enable';
+    this.enableSide = enable === 'enable';
+  }
+
+  signOut() {
+    debugger
+    localStorage.clear();
+    this.route.navigate(['/auth']);
   }
 }
