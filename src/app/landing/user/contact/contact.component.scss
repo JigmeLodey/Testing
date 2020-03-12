@@ -3,7 +3,13 @@
   width: 100%;
   padding: 3px;
   overflow-x: hidden;
-
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #b10c2e;
+  }
   .contact-detail {
     height: 790px;
     width: 400px;

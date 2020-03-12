@@ -108,6 +108,9 @@
     .add-body {
       height: 550px;
       width: 100%;
+      padding-bottom:5px ;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       img {
         height: 250px;

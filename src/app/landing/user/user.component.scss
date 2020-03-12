@@ -87,7 +87,7 @@
     background: #ffffff;
     position: fixed;
     margin-top: 50px;
-    height: 100%;
+    height: auto;
     width: 14%;
 
     .title {
@@ -148,6 +148,23 @@
         color: #333;
       }
     }
+  }
+  @media only screen and (max-height: 2100px) {
+    .features{
+      padding-left: 25px;
+      padding-top: 0;
+      padding-bottom: 10px;
+      .icons-nav{
+        padding: 0px;
+      }
+    }
+    .navigation{
+      padding-top: 0px;
+      .icons-nav{
+        padding: 0px;
+      }
+    }
+
   }
   .contain{
     margin-top: 30px;
